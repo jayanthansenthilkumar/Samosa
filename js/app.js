@@ -311,7 +311,7 @@ function initRecipeTabs() {
         recipeTitle.textContent = data.title;
         recipeDesc.textContent = data.desc;
         if (recipeIngredients) {
-          recipeIngredients.innerHTML = data.ingredients.map(ing => `<li>✨ ${ing}</li>`).join('');
+          recipeIngredients.innerHTML = data.ingredients.map(ing => `<li><i class="ri-checkbox-circle-fill" style="color:var(--accent-gold); margin-right: 0.35rem;"></i> ${ing}</li>`).join('');
         }
       }
     });
