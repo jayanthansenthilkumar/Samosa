@@ -1386,6 +1386,32 @@ button {
   }
 }
 
+.dev-branding {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.dev-brand-link {
+  color: var(--accent-gold-bright);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  border: 1px solid var(--border-subtle);
+}
+
+.dev-brand-link:hover {
+  color: #ffffff;
+  background: var(--accent-gold);
+  border-color: var(--accent-gold-bright);
+  box-shadow: 0 4px 15px var(--accent-gold-glow);
+}
+
 /* WhatsApp Order Modal */
 .modal-overlay {
   position: fixed;

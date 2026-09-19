@@ -115,4 +115,7 @@ Open `http://localhost:8080/` in your browser.
 
 ---
 
+## 🛠️ Developer Branding
+
+**AustralAI** — Powered by [Aventrea.me](https://aventrea.me)  
 *Created with ❤️ for Karpagam Foods using pure HTML, CSS, and Vanilla JavaScript.*
