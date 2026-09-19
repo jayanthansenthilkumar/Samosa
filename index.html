@@ -871,49 +871,49 @@
     <div class="modal-container">
       <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close modal"><i class="ri-close-line"></i></button>
       
-      <div style="text-align: center; margin-bottom: 1.5rem;">
-        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); display: grid; place-items: center; color: #25d366; margin: 0 auto 0.75rem; font-size: 1.5rem;">
-          <i class="ri-whatsapp-line"></i>
+      <div class="modal-header-block">
+        <div class="modal-icon-badge">
+          <i class="ri-whatsapp-fill"></i>
         </div>
-        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--text-bright);">Quick WhatsApp Order</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Fill details to send an instant order message to Karpagam Foods</p>
+        <h3 class="modal-title">Quick WhatsApp Order</h3>
+        <p class="modal-subtitle">Fill details to send an instant order message to Karpagam Foods</p>
       </div>
 
       <form id="whatsappOrderForm" onsubmit="event.preventDefault();">
-        <div class="calc-form-group">
-          <label class="calc-label" for="modalProductSize">Select Sheet Size</label>
-          <select id="modalProductSize" class="calc-select">
+        <div class="modal-form-group">
+          <label class="modal-label" for="modalProductSize">Select Sheet Size</label>
+          <select id="modalProductSize" class="calc-select modal-input">
             <option value="5 x 5 inch (Small - 100 sheets)">Small (5 × 5 inch - 100 sheets)</option>
             <option value="7 x 7 inch (Medium - 100 sheets)" selected>Medium (7 × 7 inch - 100 sheets)</option>
             <option value="8 x 8 inch (Large - 100 sheets)">Large (8 × 8 inch - 100 sheets)</option>
           </select>
         </div>
 
-        <div class="calc-form-group">
-          <label class="calc-label">Number of Packs (100 Sheets / Pack)</label>
-          <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <button type="button" id="modalQtyMinus" style="width: 42px; height: 42px; border-radius: var(--radius-md); background: var(--input-bg); border: 1px solid var(--border-medium); color: var(--text-bright); font-size: 1.25rem; font-weight: 700; display: grid; place-items: center;"><i class="ri-subtract-line"></i></button>
-            <input type="number" id="modalQty" class="calc-input" value="1" min="1" max="100" style="text-align: center;">
-            <button type="button" id="modalQtyPlus" style="width: 42px; height: 42px; border-radius: var(--radius-md); background: var(--input-bg); border: 1px solid var(--border-medium); color: var(--text-bright); font-size: 1.25rem; font-weight: 700; display: grid; place-items: center;"><i class="ri-add-line"></i></button>
+        <div class="modal-form-group">
+          <label class="modal-label">Number of Packs (100 Sheets / Pack)</label>
+          <div class="modal-qty-row">
+            <button type="button" id="modalQtyMinus" class="modal-qty-btn" aria-label="Decrease quantity"><i class="ri-subtract-line"></i></button>
+            <input type="number" id="modalQty" class="calc-input modal-input modal-qty-input" value="1" min="1" max="100">
+            <button type="button" id="modalQtyPlus" class="modal-qty-btn" aria-label="Increase quantity"><i class="ri-add-line"></i></button>
           </div>
         </div>
 
-        <div class="calc-form-group">
-          <label class="calc-label" for="modalCustomerName">Your Name</label>
-          <input type="text" id="modalCustomerName" class="calc-input" placeholder="e.g. Ramesh Kumar">
+        <div class="modal-form-group">
+          <label class="modal-label" for="modalCustomerName">Your Name</label>
+          <input type="text" id="modalCustomerName" class="calc-input modal-input" placeholder="e.g. Ramesh Kumar">
         </div>
 
-        <div class="calc-form-group">
-          <label class="calc-label" for="modalCustomerCity">Delivery Location / City</label>
-          <input type="text" id="modalCustomerCity" class="calc-input" placeholder="e.g. Anna Nagar, Chennai">
+        <div class="modal-form-group">
+          <label class="modal-label" for="modalCustomerCity">Delivery Location / City</label>
+          <input type="text" id="modalCustomerCity" class="calc-input modal-input" placeholder="e.g. Anna Nagar, Chennai">
         </div>
 
-        <div class="calc-form-group">
-          <label class="calc-label" for="modalCustomerNote">Notes / Special Requests (Optional)</label>
-          <input type="text" id="modalCustomerNote" class="calc-input" placeholder="e.g. Need refrigerated delivery by tomorrow">
+        <div class="modal-form-group">
+          <label class="modal-label" for="modalCustomerNote">Notes / Special Requests (Optional)</label>
+          <input type="text" id="modalCustomerNote" class="calc-input modal-input" placeholder="e.g. Need refrigerated delivery by tomorrow">
         </div>
 
-        <button type="button" class="btn btn-whatsapp" id="sendWaOrderBtn" style="width: 100%; margin-top: 1rem; padding: 0.9rem;">
+        <button type="button" class="btn btn-whatsapp modal-submit-btn" id="sendWaOrderBtn">
           <i class="ri-whatsapp-line"></i>
           Send Order via WhatsApp
         </button>
