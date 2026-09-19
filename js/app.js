@@ -23,8 +23,8 @@ function initThemeToggle() {
   const themeBtnMobile = document.getElementById('themeToggleBtnMobile');
   const storedTheme = localStorage.getItem('samosa_theme');
 
-  // Default to dark theme if not set
-  const currentTheme = storedTheme || 'dark';
+  // Default to light theme if not set
+  const currentTheme = storedTheme || 'light';
   document.documentElement.setAttribute('data-theme', currentTheme);
 
   function toggleTheme() {
