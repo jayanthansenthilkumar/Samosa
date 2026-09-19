@@ -185,12 +185,18 @@ button {
   background: none;
 }
 
-/* Global Container */
+/* Global Container with Ultrawide & Super-Ultrawide Support */
 .container-shell {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+  .container-shell {
+    padding: 0 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -199,13 +205,33 @@ button {
   }
 }
 
+@media (min-width: 1600px) {
+  .container-shell {
+    max-width: 1480px;
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container-shell {
+    max-width: 1680px;
+    padding: 0 4rem;
+  }
+}
+
 /* Section Shell */
 .section {
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
   position: relative;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+@media (min-width: 1200px) {
   .section {
     padding: 6.5rem 0;
   }
@@ -228,18 +254,12 @@ button {
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: clamp(1.85rem, 3.5vw + 0.5rem, 3.25rem);
   font-weight: 800;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--text-bright) 30%, var(--accent-gold-bright) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 3rem;
-  }
 }
 
 .section-copy {
@@ -678,22 +698,10 @@ button {
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw + 0.8rem, 4.25rem);
   font-weight: 800;
   line-height: 1.08;
   margin-bottom: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .hero-title {
-    font-size: 3.25rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero-title {
-    font-size: 4rem;
-  }
 }
 
 .hero-title .highlight {
@@ -703,7 +711,7 @@ button {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1vw + 0.75rem, 1.15rem);
   line-height: 1.7;
   color: var(--text-muted);
   margin-bottom: 2.25rem;
@@ -713,16 +721,29 @@ button {
 .hero-cta-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.85rem;
   margin-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .hero-cta-group .btn {
+    width: 100%;
+  }
 }
 
 .hero-features-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-subtle);
+}
+
+@media (min-width: 576px) {
+  .hero-features-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }
 
 .hero-feature-item {
@@ -1617,5 +1638,171 @@ button {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ==========================================================================
+   10. UNIVERSAL RESPONSIVE BREAKPOINT ADAPTATION SYSTEM
+   Comprehensive layout rules covering mobile (6.1"-6.8"), foldables (7.6"-8.0"),
+   laptops (11.6"-18.0"), desktop monitors (21.5"-32.0"), and Ultrawides (34"-49")
+   ========================================================================== */
+
+/* About Stats Row Base */
+.about-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.5rem;
+}
+
+/* Category 1: Ultra-Small & Standard Mobile Phones (320px - 480px / 6.1" - 6.3") */
+@media (max-width: 480px) {
+  .brand-logo-text {
+    font-size: 1.1rem;
+  }
+  
+  .brand-logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .header-actions .btn-whatsapp {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .about-stats-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .product-specs .spec-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .calc-card {
+    padding: 1.75rem 1.15rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .calc-num {
+    font-size: clamp(2.25rem, 8vw, 3.25rem);
+  }
+
+  .recipe-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-container {
+    max-width: 95vw;
+    padding: 1.35rem 1.15rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .floating-wa-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Category 2: Max/Ultra Mobile & Foldables (481px - 767px / 6.7"-6.8" & 7.6"-8.0"+ Foldable) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Category 3: Compact Laptops / Chromebooks & Small Tablets (768px - 1023px / 11.6"-13.3") */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wholesale-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Category 4: Standard & Performance Laptops (1024px - 1440px / 14.0", 15.6", 16.0", 17.3"-18.0") */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wholesale-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Category 5 & 6: Desktop Monitors, 4K & Ultrawide / Super-Ultrawide (1441px+, 21.5"-49.0" 21:9 & 32:9) */
+@media (min-width: 1441px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4.5rem;
+  }
+
+  .hero-visual-card {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .calc-card, .wholesale-banner {
+    padding: 4rem 3.5rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* 2K / 4K / 32:9 Super Ultrawide Centering */
+  body {
+    font-size: 110%;
+  }
+
+  .section {
+    padding: 7.5rem 0;
+  }
+
+  .calc-num {
+    font-size: 4.5rem;
   }
 }
